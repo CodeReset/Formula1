@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, TouchableOpacity, Image} from 'react-native';
+import {View, Text} from 'react-native';
 
 import PropTypes from 'prop-types';
 import {styles} from './style';
@@ -7,12 +7,12 @@ import {styles} from './style';
 const RacesItem = ({race}) => {
   return (
     <View style={styles.containerItem}>
-      <TouchableOpacity style={styles.contentName}>
+      <Text style={styles.contentName}>
         <Text style={styles.contentNameText}>Sn: {race.season}</Text>
-      </TouchableOpacity>
-      <TouchableOpacity style={styles.contentNameRace}>
+      </Text>
+      <Text style={styles.contentNameRace}>
         <Text style={styles.contentTextRound}>Round: {race.round}</Text>
-      </TouchableOpacity>
+      </Text>
       <Text style={styles.contentDate}>
         Possition: {race.Results[0].position}
       </Text>

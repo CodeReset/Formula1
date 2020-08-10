@@ -2,19 +2,25 @@ import React, {Component} from 'react';
 
 import ErrorIndicator from './helpers/ErrorIndicator';
 
-class ErrorBaundary extends Component {
+class ErrorBoundary extends Component {
   constructor(props) {
     super(props);
     this.state = {
       hasError: false,
     };
   }
-  componentDidCatch() {
-    this.setState({
+  // during the render” no effects
+  static getDerivedStateFromError(error) {
+    return {
       hasError: true,
-    });
+    };
   }
 
+  // commit with effects
+  // componentDidCatch(error, info) {
+
+  //   logComponentStackToMyService(info.componentStack);
+  // }
   render() {
     if (this.state.hasError) {
       return <ErrorIndicator />;
@@ -23,4 +29,4 @@ class ErrorBaundary extends Component {
   }
 }
 
-export default ErrorBaundary;
+export default ErrorBoundary;

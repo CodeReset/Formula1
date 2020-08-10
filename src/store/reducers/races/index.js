@@ -1,4 +1,4 @@
-import * as types from '../../../api/races/types';
+import * as types from '../../types/races';
 
 const initialState = {
   races: [],

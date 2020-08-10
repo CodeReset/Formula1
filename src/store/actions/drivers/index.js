@@ -1,19 +1,18 @@
-import axios from 'axios';
-
 // import * as rootNavigation from '../../navigator/helpers/rootNavigation';
+import * as types from '../../types/drivers';
 
-import * as types from './types';
-import config from '../config';
+import {apiHelper} from '../../../api';
 
 const getStartDrivers = (driverId = null, page = 0) => async (dispatch) => {
   dispatch({type: types.LOADERSTART});
   try {
-    const {data} = await axios.get(
-      config.api + `/drivers.json?limit=10&offset=${10 * page}`,
+    const data = await apiHelper(
+      'GET',
+      `/drivers.json?limit=10&offset=${10 * page}`,
     );
     dispatch({
       type: types.GETSTARTDRIVERS,
-      payload: data.MRData,
+      payload: data,
     });
   } catch (e) {
     console.log(e);

@@ -5,7 +5,7 @@ import {useDispatch, useSelector} from 'react-redux';
 
 import {styles} from './style';
 import Logo from '../../assets/icons/f1_logo.svg';
-import {getStartDrivers} from '../../api/drivers';
+import {getStartDrivers} from '../../store/actions/drivers';
 import DriversList from '../../components/DriversList';
 import Pagination from '../../components/Pagination';
 import CopyRight from '../../components/CopyRight';

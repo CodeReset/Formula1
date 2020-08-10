@@ -3,7 +3,7 @@ import {View, ActivityIndicator, Text} from 'react-native';
 
 import {useDispatch, useSelector} from 'react-redux';
 
-import {getDriverRaceInfo} from '../../api/races';
+import {getDriverRaceInfo} from '../../store/actions/races';
 import {styles} from './style';
 import {usePagination} from '../../helpers/usePagination';
 import Pagination from '../../components/Pagination';

@@ -1,4 +1,4 @@
-import * as types from '../../../api/drivers/types';
+import * as types from '../../types/drivers';
 
 const initialState = {
   drivers: [],
